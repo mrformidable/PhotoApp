@@ -12,8 +12,9 @@
 		44EC2F4B20D8C107009C7DAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44EC2F4920D8C107009C7DAA /* Main.storyboard */; };
 		44EC2F4D20D8C107009C7DAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44EC2F4C20D8C107009C7DAA /* Assets.xcassets */; };
 		44EC2F5020D8C107009C7DAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44EC2F4E20D8C107009C7DAA /* LaunchScreen.storyboard */; };
-		44EC2F5B20D8C107009C7DAA /* PhotoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC2F5A20D8C107009C7DAA /* PhotoAppTests.swift */; };
 		44EC2F6620D8C107009C7DAA /* PhotoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC2F6520D8C107009C7DAA /* PhotoAppUITests.swift */; };
+		44EC2F7420D97232009C7DAA /* PhotoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC2F7320D97232009C7DAA /* PhotoTests.swift */; };
+		44EC2F7620D973BB009C7DAA /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC2F7520D973BB009C7DAA /* Photo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,11 +43,12 @@
 		44EC2F4F20D8C107009C7DAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		44EC2F5120D8C107009C7DAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44EC2F5620D8C107009C7DAA /* PhotoAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		44EC2F5A20D8C107009C7DAA /* PhotoAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAppTests.swift; sourceTree = "<group>"; };
 		44EC2F5C20D8C107009C7DAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44EC2F6120D8C107009C7DAA /* PhotoAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		44EC2F6520D8C107009C7DAA /* PhotoAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAppUITests.swift; sourceTree = "<group>"; };
 		44EC2F6720D8C107009C7DAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44EC2F7320D97232009C7DAA /* PhotoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTests.swift; sourceTree = "<group>"; };
+		44EC2F7520D973BB009C7DAA /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				44EC2F4520D8C107009C7DAA /* AppDelegate.swift */,
 				44EC2F4720D8C107009C7DAA /* ViewController.swift */,
+				44EC2F7520D973BB009C7DAA /* Photo.swift */,
 				44EC2F4920D8C107009C7DAA /* Main.storyboard */,
 				44EC2F4C20D8C107009C7DAA /* Assets.xcassets */,
 				44EC2F4E20D8C107009C7DAA /* LaunchScreen.storyboard */,
@@ -110,8 +113,8 @@
 		44EC2F5920D8C107009C7DAA /* PhotoAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				44EC2F5A20D8C107009C7DAA /* PhotoAppTests.swift */,
 				44EC2F5C20D8C107009C7DAA /* Info.plist */,
+				44EC2F7320D97232009C7DAA /* PhotoTests.swift */,
 			);
 			path = PhotoAppTests;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 					};
 					44EC2F5520D8C107009C7DAA = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 44EC2F4120D8C107009C7DAA;
 					};
@@ -259,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44EC2F7620D973BB009C7DAA /* Photo.swift in Sources */,
 				44EC2F4820D8C107009C7DAA /* ViewController.swift in Sources */,
 				44EC2F4620D8C107009C7DAA /* AppDelegate.swift in Sources */,
 			);
@@ -268,7 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44EC2F5B20D8C107009C7DAA /* PhotoAppTests.swift in Sources */,
+				44EC2F7420D97232009C7DAA /* PhotoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,12 +462,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 38DEJUL48H;
 				INFOPLIST_FILE = PhotoAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.creativemic.PhotoAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PhotoApp.app/PhotoApp";
@@ -474,6 +481,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 38DEJUL48H;
 				INFOPLIST_FILE = PhotoAppTests/Info.plist;
