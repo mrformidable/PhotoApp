@@ -11,12 +11,50 @@ import XCTest
 
 class PhotoTests: XCTestCase {
     
+    fileprivate var validFields: ValidFields!
+    fileprivate var invalidFields: InvalidFields!
+    
     override func setUp() {
         super.setUp()
+        
+        validFields = ValidFields()
+        invalidFields = InvalidFields()
     }
     
     func test_photoModelCorrectly_decodesData() {
-        let json: [String: Any] = [
+        let json = ValidFields.completeFields
+        let photo = PhotoStubGenerator.createPhoto(with: json)!
+        XCTAssertEqual(photo.id, "12345")
+        XCTAssertEqual(photo.height, 200)
+        XCTAssertEqual(photo.width, 300)
+        XCTAssertEqual(photo.likes, 50)
+    }
+    
+    func test_photoModel_doesNot_decodeIncorrectFields() {
+        let incompleteJson = InvalidFields.incompleteFields
+        let photo = PhotoStubGenerator.createPhoto(with: incompleteJson)
+        XCTAssertNil(photo)
+    }
+    
+    // Mark:- Stubs
+    struct PhotoStubGenerator {
+        static func createPhoto(with json: [String: Any]) -> Photo? {
+            guard let data = try? JSONSerialization.data(withJSONObject: json, options: .prettyPrinted) else {
+                XCTFail("expected valid data")
+                return nil
+            }
+            guard let photo = try? JSONDecoder().decode(Photo.self, from: data) else {
+                return nil
+            }
+            return photo
+        }
+    }
+    
+}
+
+private extension PhotoTests {
+    struct ValidFields {
+        static let completeFields: [String: Any]  = [
             "id": "12345",
             "height": 200,
             "width": 300,
@@ -31,38 +69,24 @@ class PhotoTests: XCTestCase {
             ],
             "likes": 50
         ]
-        guard let data = try? JSONSerialization.data(withJSONObject: json, options: .prettyPrinted) else {
-            XCTFail("expected valid data")
-            return
-        }
-        guard let photo = try? JSONDecoder().decode(Photo.self, from: data) else {
-            XCTFail("Error decoding: data")
-            return
-        }
-        XCTAssertEqual(photo.id, "12345")
-        XCTAssertEqual(photo.height, 200)
-        XCTAssertEqual(photo.width, 300)
-        XCTAssertEqual(photo.likes, 50)
     }
-    
-    func test_photoModel_doesNot_decodeIncorrectFields() {
-         let incompleteJson: [String: Any] = [
+    struct InvalidFields {
+        static let incompleteFields: [String: Any]  = [
             "id": "12345",
             "height": 200,
             "width": 300,
             "creation_date": "2018-06-17T20:28:11-04:00"
         ]
-        guard let data = try? JSONSerialization.data(withJSONObject: incompleteJson, options: .prettyPrinted) else {
-            XCTFail("expected valid data")
-            return
-        }
-         let photo = try? JSONDecoder().decode(Photo.self, from: data)
-         XCTAssertNil(photo)
         
+        static let missingFields: [String: Any] = [:]
     }
-
-
 }
+
+
+
+
+
+
 
 
 
