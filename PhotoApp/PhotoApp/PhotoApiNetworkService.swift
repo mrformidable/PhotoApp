@@ -15,7 +15,8 @@ class PhotoApiNetworkService: NetworkService {
         self.session = session
     }
     
-    func fetchPhotos(request: URLRequest, _ completion: @escaping (Result<Photo>) -> Void) {
+    func fetchPhotos(with endpoint: UnsplashApiEndPoint, _ completion: @escaping (Result<Photo>) -> Void) {
+        let request = endpoint.request
         fetch(with: request, completion: completion)
     }
 }
