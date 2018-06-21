@@ -1,20 +1,22 @@
 //
-//  APIEndPoint.swift
+//  NetworkConfiguration.swift
 //  PhotoApp
 //
-//  Created by Michael A on 2018-06-20.
+//  Created by Michael A on 2018-06-21.
 //  Copyright © 2018 AI Labs. All rights reserved.
 //
 
 import Foundation
 
-protocol ApiEndPoint {
+import Foundation
+
+protocol NetworkEndPoint {
     var baseUrl: String { get }
     var path: String { get }
     var urlQueryItems: [URLQueryItem] { get }
 }
 
-extension ApiEndPoint {
+extension NetworkEndPoint {
     var urlComponents: URLComponents {
         var components = URLComponents(string: baseUrl)
         components?.path = path
@@ -27,8 +29,10 @@ extension ApiEndPoint {
     }
 }
 
-enum UnsplashApiEndPoint: ApiEndPoint {
-    case curatedPhotos(perPage: Int, sortedBy: SortedPhoto)
+enum NetworkConfiguration: NetworkEndPoint {
+    case curatedPhotos(page: Int, sortedBy: SortedPhoto)
+    
+    static var photosPerPage = 10
     
     var baseUrl: String {
         return "https://api.unsplash.com"
@@ -37,7 +41,7 @@ enum UnsplashApiEndPoint: ApiEndPoint {
     var apiKey: String {
         return "f92a7e8c58fcd64f17093ef038ad28548cbca5971d84b60c0fd8401ae9619004"
     }
-
+    
     var path: String {
         switch self {
         case .curatedPhotos:
@@ -47,19 +51,22 @@ enum UnsplashApiEndPoint: ApiEndPoint {
     
     var urlQueryItems: [URLQueryItem] {
         switch self {
-        case .curatedPhotos(let perPage, let sorted):
+        case .curatedPhotos(let page, let sorted):
             return [URLQueryItem(name: ParameterKeys.clientId.rawValue, value: apiKey),
-            URLQueryItem(name: ParameterKeys.perPage.rawValue, value: String(perPage)),
-            URLQueryItem(name: ParameterKeys.orderBy.rawValue, value: sorted.rawValue)]
+                    URLQueryItem(name: ParameterKeys.page.rawValue, value: String(page)),
+                    URLQueryItem(name: ParameterKeys.orderBy.rawValue, value: sorted.rawValue),
+                    URLQueryItem(name: ParameterKeys.perPage.rawValue, value: String(NetworkConfiguration.photosPerPage))
+            ]
         }
     }
 }
 
-extension UnsplashApiEndPoint {
+extension NetworkConfiguration {
     private enum ParameterKeys: String {
         case clientId = "client_id"
-        case perPage = "per_page"
+        case page = "page"
         case orderBy = "order_by"
+        case perPage = "per_page"
     }
     
     enum SortedPhoto: String {
@@ -68,9 +75,3 @@ extension UnsplashApiEndPoint {
         case popular = "popular"
     }
 }
-
-
-
-
-
-
