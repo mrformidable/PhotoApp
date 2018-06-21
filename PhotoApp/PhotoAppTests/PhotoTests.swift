@@ -36,7 +36,7 @@ class PhotoTests: XCTestCase {
         XCTAssertNil(photo)
     }
     
-    // Mark:- Stubs
+    //Mark:- Stubs
     struct PhotoStubGenerator {
         static func createPhoto(with json: [String: Any]) -> Photo? {
             guard let data = try? JSONSerialization.data(withJSONObject: json, options: .prettyPrinted) else {
@@ -81,14 +81,6 @@ private extension PhotoTests {
         static let missingFields: [String: Any] = [:]
     }
 }
-
-
-
-
-
-
-
-
 
 
 

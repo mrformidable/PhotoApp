@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		441D49A020DAC7EE002A40AC /* ResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441D499F20DAC7EE002A40AC /* ResultTests.swift */; };
+		441D49A220DAF593002A40AC /* APIEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441D49A120DAF593002A40AC /* APIEndPoint.swift */; };
+		441D49A420DAF5A3002A40AC /* APIEndPointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441D49A320DAF5A3002A40AC /* APIEndPointTests.swift */; };
+		4444775120D9AAD300D52304 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4444775020D9AAD300D52304 /* NetworkService.swift */; };
+		4444775320D9ABB400D52304 /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4444775220D9ABB400D52304 /* NetworkTests.swift */; };
+		4444775520D9AF5000D52304 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4444775420D9AF5000D52304 /* Result.swift */; };
+		4444775920D9C47F00D52304 /* PhotoApiNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4444775820D9C47F00D52304 /* PhotoApiNetworkService.swift */; };
+		4444775D20D9CACE00D52304 /* PhotoApiServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4444775C20D9CACE00D52304 /* PhotoApiServiceTests.swift */; };
 		44EC2F4620D8C107009C7DAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC2F4520D8C107009C7DAA /* AppDelegate.swift */; };
 		44EC2F4820D8C107009C7DAA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC2F4720D8C107009C7DAA /* ViewController.swift */; };
 		44EC2F4B20D8C107009C7DAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44EC2F4920D8C107009C7DAA /* Main.storyboard */; };
@@ -35,6 +43,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		441D499F20DAC7EE002A40AC /* ResultTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTests.swift; sourceTree = "<group>"; };
+		441D49A120DAF593002A40AC /* APIEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndPoint.swift; sourceTree = "<group>"; };
+		441D49A320DAF5A3002A40AC /* APIEndPointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndPointTests.swift; sourceTree = "<group>"; };
+		4444775020D9AAD300D52304 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		4444775220D9ABB400D52304 /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
+		4444775420D9AF5000D52304 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		4444775820D9C47F00D52304 /* PhotoApiNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoApiNetworkService.swift; sourceTree = "<group>"; };
+		4444775C20D9CACE00D52304 /* PhotoApiServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoApiServiceTests.swift; sourceTree = "<group>"; };
 		44EC2F4220D8C107009C7DAA /* PhotoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44EC2F4520D8C107009C7DAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44EC2F4720D8C107009C7DAA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +118,10 @@
 				44EC2F4520D8C107009C7DAA /* AppDelegate.swift */,
 				44EC2F4720D8C107009C7DAA /* ViewController.swift */,
 				44EC2F7520D973BB009C7DAA /* Photo.swift */,
+				4444775020D9AAD300D52304 /* NetworkService.swift */,
+				441D49A120DAF593002A40AC /* APIEndPoint.swift */,
+				4444775820D9C47F00D52304 /* PhotoApiNetworkService.swift */,
+				4444775420D9AF5000D52304 /* Result.swift */,
 				44EC2F4920D8C107009C7DAA /* Main.storyboard */,
 				44EC2F4C20D8C107009C7DAA /* Assets.xcassets */,
 				44EC2F4E20D8C107009C7DAA /* LaunchScreen.storyboard */,
@@ -115,6 +135,10 @@
 			children = (
 				44EC2F5C20D8C107009C7DAA /* Info.plist */,
 				44EC2F7320D97232009C7DAA /* PhotoTests.swift */,
+				441D49A320DAF5A3002A40AC /* APIEndPointTests.swift */,
+				4444775220D9ABB400D52304 /* NetworkTests.swift */,
+				441D499F20DAC7EE002A40AC /* ResultTests.swift */,
+				4444775C20D9CACE00D52304 /* PhotoApiServiceTests.swift */,
 			);
 			path = PhotoAppTests;
 			sourceTree = "<group>";
@@ -264,8 +288,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				44EC2F7620D973BB009C7DAA /* Photo.swift in Sources */,
+				4444775520D9AF5000D52304 /* Result.swift in Sources */,
+				4444775920D9C47F00D52304 /* PhotoApiNetworkService.swift in Sources */,
 				44EC2F4820D8C107009C7DAA /* ViewController.swift in Sources */,
+				4444775120D9AAD300D52304 /* NetworkService.swift in Sources */,
 				44EC2F4620D8C107009C7DAA /* AppDelegate.swift in Sources */,
+				441D49A220DAF593002A40AC /* APIEndPoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +301,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4444775D20D9CACE00D52304 /* PhotoApiServiceTests.swift in Sources */,
+				4444775320D9ABB400D52304 /* NetworkTests.swift in Sources */,
+				441D49A020DAC7EE002A40AC /* ResultTests.swift in Sources */,
+				441D49A420DAF5A3002A40AC /* APIEndPointTests.swift in Sources */,
 				44EC2F7420D97232009C7DAA /* PhotoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
