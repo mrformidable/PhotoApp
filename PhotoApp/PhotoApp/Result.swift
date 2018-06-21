@@ -14,6 +14,7 @@ enum Result<T> {
 }
 
 enum NetworkError: Error {
+    case invalidStatusCode(Int)
     case requestFailed
     case invalidData
     case decodingError
@@ -21,11 +22,13 @@ enum NetworkError: Error {
     var localizedDescription: String {
         switch self {
         case .requestFailed:
-            return NSLocalizedString("Invalid response code, status code not 200", comment: "Describing http response error")
+            return NSLocalizedString("Invalid http response", comment: "Describing http response error")
         case .invalidData:
             return NSLocalizedString("Unable to get data from url", comment: "Describing nil data provided from url session")
         case .decodingError:
             return NSLocalizedString("Unable to decode JSON from data", comment: "Describing JSON decoding error")
+        case .invalidStatusCode(let statusCode):
+            return NSLocalizedString("Invalid response code, status code \(statusCode)", comment: "Describing http response error")
         }
     }
 }

@@ -21,7 +21,8 @@ class NetworkTests: XCTestCase {
     
     func test_networkService_usesCorrectUrl() {
         let url = URL(string: "www.test.com")!
-        sut.fetchPhotos(url: url) { _ in }
+        let request = URLRequest(url: url)
+        sut.fetchPhotos(request: request) { _ in }
         XCTAssertEqual(mockSession.assignedUrl!, url)
     }
     
@@ -29,7 +30,8 @@ class NetworkTests: XCTestCase {
         let dataTask = MockUrlSessionDataTask()
         mockSession.sessionDataTask = dataTask
         let url = URL(string: "www.test.com")!
-        sut.fetchPhotos(url: url) { _ in }
+        let request = URLRequest(url: url)
+        sut.fetchPhotos(request: request) { _ in }
         XCTAssertTrue(dataTask.resumeCalled)
     }
     
@@ -38,8 +40,9 @@ class NetworkTests: XCTestCase {
         mockSession.sessionDataTask = dataTask
         mockSession.sessionDataTask.resume()
         let url = URL(string: "www.test.com")!
+        let request = URLRequest(url: url)
         let expectation = XCTestExpectation(description: "Completion Handler Invoked")
-        sut.fetchPhotos(url: url) { (result) in
+        sut.fetchPhotos(request: request) { (result) in
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 5)
@@ -52,7 +55,8 @@ class NetworkTests: XCTestCase {
             XCTFail("Invalid url provided")
             return
         }
-        
+        let request = URLRequest(url: url)
+
         guard let data = try? Data(contentsOf: url) else {
             XCTFail("Invalid data provided")
             return
@@ -60,18 +64,20 @@ class NetworkTests: XCTestCase {
         mockSession.data = data
         
         let expectation = XCTestExpectation(description: "Photo fetch")
+        var _error: Error?
         
-        sut.fetchPhotos(url: url) { (result) in
+        sut.fetchPhotos(request: request) { (result) in
             switch result {
             case .success(let fetchedPhotos):
                 photos = fetchedPhotos
             case .failure(let error):
-                XCTFail("Failure to fetch photos, error: \(error)")
+                _error = error
             }
             expectation.fulfill()
 
         }
         wait(for: [expectation], timeout: 5)
+        XCTAssertNil(_error)
         XCTAssertTrue(photos.count > 0)
     }
     

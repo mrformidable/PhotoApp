@@ -15,7 +15,7 @@ class PhotoApiNetworkService: NetworkService {
         self.session = session
     }
     
-    func fetchPhotos(url: URL, _ completion: @escaping (Result<Photo>) -> Void) {
-        fetch(with: url, completion: completion)
+    func fetchPhotos(request: URLRequest, _ completion: @escaping (Result<Photo>) -> Void) {
+        fetch(with: request, completion: completion)
     }
 }
