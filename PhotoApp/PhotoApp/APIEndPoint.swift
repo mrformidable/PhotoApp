@@ -37,7 +37,7 @@ enum UnsplashApiEndPoint: ApiEndPoint {
     var apiKey: String {
         return "f92a7e8c58fcd64f17093ef038ad28548cbca5971d84b60c0fd8401ae9619004"
     }
-    
+
     var path: String {
         switch self {
         case .curatedPhotos:
