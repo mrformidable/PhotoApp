@@ -22,8 +22,7 @@ class NetworkTests: XCTestCase {
     func test_networkServiceCallsResume_whenFetching() {
         let dataTask = MockUrlSessionDataTask()
         mockSession.sessionDataTask = dataTask
-        let apiEndpoint = UnsplashApiEndPoint.curatedPhotos(perPage: 10, sortedBy: .latest)
-        sut.fetchPhotos(with: apiEndpoint) { _ in }
+        sut.fetchPhotos(with: makeNetworkConfiguration()) { _ in }
         XCTAssertTrue(dataTask.resumeCalled)
     }
     
@@ -31,9 +30,8 @@ class NetworkTests: XCTestCase {
         let dataTask = MockUrlSessionDataTask()
         mockSession.sessionDataTask = dataTask
         mockSession.sessionDataTask.resume()
-        let apiEndpoint = UnsplashApiEndPoint.curatedPhotos(perPage: 10, sortedBy: .latest)
         let expectation = XCTestExpectation(description: "Completion Handler Invoked")
-        sut.fetchPhotos(with: apiEndpoint) { (result) in
+        sut.fetchPhotos(with: makeNetworkConfiguration()) { (result) in
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 5)
@@ -46,7 +44,6 @@ class NetworkTests: XCTestCase {
             XCTFail("Invalid url provided")
             return
         }
-        let apiEndpoint = UnsplashApiEndPoint.curatedPhotos(perPage: 10, sortedBy: .latest)
 
         guard let data = try? Data(contentsOf: url) else {
             XCTFail("Invalid data provided")
@@ -57,7 +54,7 @@ class NetworkTests: XCTestCase {
         let expectation = XCTestExpectation(description: "Photo fetch")
         var _error: Error?
 
-        sut.fetchPhotos(with: apiEndpoint) { (result) in
+        sut.fetchPhotos(with: makeNetworkConfiguration()) { (result) in
             switch result {
             case .success(let fetchedPhotos):
                 photos = fetchedPhotos
@@ -65,13 +62,16 @@ class NetworkTests: XCTestCase {
                 _error = error
             }
             expectation.fulfill()
-
         }
         wait(for: [expectation], timeout: 5)
         XCTAssertNil(_error)
         XCTAssertTrue(photos.count > 0)
     }
     
+    
+    func makeNetworkConfiguration(_ page: Int = 1, _ sortedBy: NetworkConfiguration.SortedPhoto = .latest) -> NetworkConfiguration {
+        return NetworkConfiguration.curatedPhotos(page: page, sortedBy: sortedBy)
+    }
     
     //MARK:- Mocks 
     class MockUrlSession: URLSessionProtocol {

@@ -13,15 +13,15 @@ class PhotoApiServiceTests: XCTestCase {
     
     func test_photoApiCalls_fetchPhotos() {
         let service = MockPhotoApiNetworkService()
-        let apiEndpoint = UnsplashApiEndPoint.curatedPhotos(perPage: 10, sortedBy: .latest)
-        service.fetchPhotos(with: apiEndpoint) { _ in }
+        let configuration = NetworkConfiguration.curatedPhotos(page: 1, sortedBy: .latest)
+        service.fetchPhotos(with: configuration) { _ in }
         XCTAssertTrue(service.fetchGotCalled)
     }
     
     class MockPhotoApiNetworkService: PhotoApiNetworkService {
         private(set) var fetchGotCalled = false
         
-        override func fetchPhotos(with endpoint: UnsplashApiEndPoint, _ completion: @escaping (Result<Photo>) -> Void) {
+        override func fetchPhotos(with configuration: NetworkConfiguration, _ completion: @escaping (Result<Photo>) -> Void) {
             fetchGotCalled = true
         }
     }
