@@ -19,19 +19,10 @@ class NetworkTests: XCTestCase {
         sut = PhotoApiNetworkService(session: mockSession)
     }
     
-    func test_networkService_usesCorrectUrl() {
-        let url = URL(string: "www.test.com")!
-        let request = URLRequest(url: url)
-        sut.fetchPhotos(request: request) { _ in }
-        XCTAssertEqual(mockSession.assignedUrl!, url)
-    }
-    
     func test_networkServiceCallsResume_whenFetching() {
         let dataTask = MockUrlSessionDataTask()
         mockSession.sessionDataTask = dataTask
-        let url = URL(string: "www.test.com")!
-        let request = URLRequest(url: url)
-        sut.fetchPhotos(request: request) { _ in }
+        sut.fetchPhotos(with: makeNetworkConfiguration()) { _ in }
         XCTAssertTrue(dataTask.resumeCalled)
     }
     
@@ -39,34 +30,31 @@ class NetworkTests: XCTestCase {
         let dataTask = MockUrlSessionDataTask()
         mockSession.sessionDataTask = dataTask
         mockSession.sessionDataTask.resume()
-        let url = URL(string: "www.test.com")!
-        let request = URLRequest(url: url)
         let expectation = XCTestExpectation(description: "Completion Handler Invoked")
-        sut.fetchPhotos(request: request) { (result) in
+        sut.fetchPhotos(with: makeNetworkConfiguration()) { (result) in
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 5)
     }
-    
+
     func test_networkService_fetchesPhoto() {
         var photos: [Photo] = []
-        
+
         guard let url = URL(string: "https://api.unsplash.com/photos/?client_id=f92a7e8c58fcd64f17093ef038ad28548cbca5971d84b60c0fd8401ae9619004") else {
             XCTFail("Invalid url provided")
             return
         }
-        let request = URLRequest(url: url)
 
         guard let data = try? Data(contentsOf: url) else {
             XCTFail("Invalid data provided")
             return
         }
         mockSession.data = data
-        
+
         let expectation = XCTestExpectation(description: "Photo fetch")
         var _error: Error?
-        
-        sut.fetchPhotos(request: request) { (result) in
+
+        sut.fetchPhotos(with: makeNetworkConfiguration()) { (result) in
             switch result {
             case .success(let fetchedPhotos):
                 photos = fetchedPhotos
@@ -74,13 +62,16 @@ class NetworkTests: XCTestCase {
                 _error = error
             }
             expectation.fulfill()
-
         }
         wait(for: [expectation], timeout: 5)
         XCTAssertNil(_error)
         XCTAssertTrue(photos.count > 0)
     }
     
+    
+    func makeNetworkConfiguration(_ page: Int = 1, _ sortedBy: NetworkConfiguration.SortedPhoto = .latest) -> NetworkConfiguration {
+        return NetworkConfiguration.curatedPhotos(page: page, sortedBy: sortedBy)
+    }
     
     //MARK:- Mocks 
     class MockUrlSession: URLSessionProtocol {

@@ -1,15 +1,15 @@
 //
-//  APIEndPointTests.swift
+//  NetworkConfigurationTests.swift
 //  PhotoAppTests
 //
-//  Created by Michael A on 2018-06-20.
+//  Created by Michael A on 2018-06-21.
 //  Copyright © 2018 AI Labs. All rights reserved.
 //
 
 import XCTest
 @testable import PhotoApp
 
-class APIEndPointTests: XCTestCase {
+class NetworkConfigurationTests: XCTestCase {
     
     func test_apiEndPoint_correctlySetsBaseUrl_whenGivenBaseUrl() {
         let baseURL = "https://test.com"
@@ -25,7 +25,7 @@ class APIEndPointTests: XCTestCase {
         let queryItems: [URLQueryItem] = [
             URLQueryItem(name: "qKey", value: "qValue"),
             URLQueryItem(name: "q2Key", value: "q2Value"),
-        ]
+            ]
         XCTAssertEqual(createMockEndPoint(queryItems: queryItems).urlQueryItems.count, 2)
     }
     
@@ -37,7 +37,7 @@ class APIEndPointTests: XCTestCase {
             ]
         
         let mockEndPoint = createMockEndPoint(baseURL: baseURL, path: path, queryItems: queryItems)
- 
+        
         let queryItem = "\(queryItems.first!.name)=\(queryItems.first!.value!)"
         let urlString = "\(baseURL)\(path)?\(queryItem)"
         let apiURL = URL(string: urlString)
@@ -51,18 +51,9 @@ class APIEndPointTests: XCTestCase {
         return MockApiEndPoint(baseUrl: baseURL, path: path, urlQueryItems: queryItems)
     }
     
-    struct MockApiEndPoint: ApiEndPoint {
+    struct MockApiEndPoint: NetworkEndPoint {
         var baseUrl: String
         var path: String
         var urlQueryItems: [URLQueryItem]
     }
 }
-
-
-
-
-
-
-
-
-

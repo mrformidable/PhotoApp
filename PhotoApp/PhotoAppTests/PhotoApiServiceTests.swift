@@ -13,16 +13,15 @@ class PhotoApiServiceTests: XCTestCase {
     
     func test_photoApiCalls_fetchPhotos() {
         let service = MockPhotoApiNetworkService()
-        let url = URL(fileURLWithPath: "")
-        let request = URLRequest(url: url)
-        service.fetchPhotos(request: request) { (_) in }
+        let configuration = NetworkConfiguration.curatedPhotos(page: 1, sortedBy: .latest)
+        service.fetchPhotos(with: configuration) { _ in }
         XCTAssertTrue(service.fetchGotCalled)
     }
     
     class MockPhotoApiNetworkService: PhotoApiNetworkService {
         private(set) var fetchGotCalled = false
         
-        override func fetchPhotos(request: URLRequest, _ completion: @escaping (Result<Photo>) -> Void) {
+        override func fetchPhotos(with configuration: NetworkConfiguration, _ completion: @escaping (Result<Photo>) -> Void) {
             fetchGotCalled = true
         }
     }
