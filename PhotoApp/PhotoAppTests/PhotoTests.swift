@@ -30,10 +30,10 @@ class PhotoTests: XCTestCase {
         XCTAssertEqual(photo.likes, 50)
     }
     
-    func test_photoModel_doesNot_decodeIncorrectFields() {
+    func test_photoModelDecodes_withIncompleteFields() {
         let incompleteJson = InvalidFields.incompleteFields
         let photo = PhotoStubGenerator.createPhoto(with: incompleteJson)
-        XCTAssertNil(photo)
+        XCTAssertNotNil(photo)
     }
     
     func test_photoModel_doesnotAddDuplicatePhotos() {

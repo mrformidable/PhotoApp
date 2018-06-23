@@ -10,12 +10,12 @@ import Foundation
 
 struct Photo: Codable {
     let id: String
-    let createDate: String
-    let updatedDate: String
-    let width: Int
-    let height: Int
-    let imageUrls: [String: String]
-    let likes: Int
+    let createDate: String?
+    let updatedDate: String?
+    let width: Int?
+    let height: Int?
+    let imageUrls: URLS?
+    let likes: Int?
     
     enum CodingKeys: String, CodingKey {
         case createDate = "created_at"
@@ -27,6 +27,17 @@ struct Photo: Codable {
         case height
     }
 }
+
+extension Photo {
+    struct URLS: Codable {
+        let raw: URL
+        let full: URL
+        let regular: URL
+        let small: URL
+        let thumb: URL
+    }
+}
+
 
 extension Photo: Equatable {
     static func ==(lhs: Photo, rhs: Photo) -> Bool {

@@ -22,6 +22,7 @@ class PhotoGridListViewController: UIViewController {
         setupCollectionView()
         
         viewModel.fetchPhotos(forPage: 1)
+        
         viewModel.didFinishFetch = { photos in
             self.datasource.photos = photos
             print("photo fetch complete.")

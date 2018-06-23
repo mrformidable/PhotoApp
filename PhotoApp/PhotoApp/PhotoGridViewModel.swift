@@ -52,6 +52,9 @@ class PhotoGridViewModel: PhotoGridViewModelProtocol {
         self.networkService = networkService
     }
     
+}
+
+extension PhotoGridViewModel {
     func fetchPhotos(forPage page: Int) {
         state = .fetching
         let photoApiService = networkService as! PhotoApiNetworkService

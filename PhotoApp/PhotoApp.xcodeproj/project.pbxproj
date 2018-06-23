@@ -22,6 +22,7 @@
 		4444775520D9AF5000D52304 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4444775420D9AF5000D52304 /* Result.swift */; };
 		4444775920D9C47F00D52304 /* PhotoApiNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4444775820D9C47F00D52304 /* PhotoApiNetworkService.swift */; };
 		4444775D20D9CACE00D52304 /* PhotoApiServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4444775C20D9CACE00D52304 /* PhotoApiServiceTests.swift */; };
+		44E92AD920DEC267000D8094 /* PhotoGridListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E92AD820DEC267000D8094 /* PhotoGridListViewControllerTests.swift */; };
 		44EC2F4620D8C107009C7DAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC2F4520D8C107009C7DAA /* AppDelegate.swift */; };
 		44EC2F4B20D8C107009C7DAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44EC2F4920D8C107009C7DAA /* Main.storyboard */; };
 		44EC2F4D20D8C107009C7DAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44EC2F4C20D8C107009C7DAA /* Assets.xcassets */; };
@@ -64,6 +65,7 @@
 		4444775420D9AF5000D52304 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		4444775820D9C47F00D52304 /* PhotoApiNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoApiNetworkService.swift; sourceTree = "<group>"; };
 		4444775C20D9CACE00D52304 /* PhotoApiServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoApiServiceTests.swift; sourceTree = "<group>"; };
+		44E92AD820DEC267000D8094 /* PhotoGridListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridListViewControllerTests.swift; sourceTree = "<group>"; };
 		44EC2F4220D8C107009C7DAA /* PhotoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44EC2F4520D8C107009C7DAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44EC2F4A20D8C107009C7DAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				44EC2F7320D97232009C7DAA /* PhotoTests.swift */,
 				4417AA4020DC570F009EC878 /* PhotoGridViewModelTests.swift */,
 				4417AA4620DC9F3C009EC878 /* PhotoGridListDataProviderTests.swift */,
+				44E92AD820DEC267000D8094 /* PhotoGridListViewControllerTests.swift */,
 				4417AA3F20DC569C009EC878 /* NetworkingTests */,
 			);
 			path = PhotoAppTests;
@@ -346,6 +349,7 @@
 				441D49A020DAC7EE002A40AC /* ResultTests.swift in Sources */,
 				44EC2F7420D97232009C7DAA /* PhotoTests.swift in Sources */,
 				4417AA3C20DC4B69009EC878 /* NetworkConfigurationTests.swift in Sources */,
+				44E92AD920DEC267000D8094 /* PhotoGridListViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
