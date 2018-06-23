@@ -28,4 +28,8 @@ struct Photo: Codable {
     }
 }
 
-
+extension Photo: Equatable {
+    static func ==(lhs: Photo, rhs: Photo) -> Bool {
+        return lhs.id == rhs.id
+    }
+}

@@ -36,6 +36,23 @@ class PhotoTests: XCTestCase {
         XCTAssertNil(photo)
     }
     
+    func test_photoModel_doesnotAddDuplicatePhotos() {
+        var photos: [Photo] = []
+        
+        let json1 = ValidFields.completeFields
+        let json2 = ValidFields.completeFields
+        let photo1 = PhotoStubGenerator.createPhoto(with: json1)!
+        let photo2 = PhotoStubGenerator.createPhoto(with: json2)!
+        
+        XCTAssertEqual(photo1, photo2)
+        photos.append(photo1)
+        if !photos.contains(photo2) {
+            photos.append(photo2)
+        }
+        
+        XCTAssertEqual(photos.count, 1)
+    }
+    
     //Mark:- Stubs
     struct PhotoStubGenerator {
         static func createPhoto(with json: [String: Any]) -> Photo? {
