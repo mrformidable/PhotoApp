@@ -18,6 +18,7 @@ extension ImageCachable where Self: UIImageView {
     typealias completionHandler = ((Bool) -> ())
     
     func loadImageCache(with urlString: String, completion: completionHandler?) {
+        let group = DispatchGroup()
         self.image = nil
         if let cachedImage = imageCache.object(forKey: NSString(string: urlString)) {
             DispatchQueue.main.async {
@@ -27,17 +28,21 @@ extension ImageCachable where Self: UIImageView {
             return
         }
         if let url = URL.init(string: urlString) {
-            if let imageData = try? Data.init(contentsOf: url) {
-                if let image = UIImage(data: imageData) {
-                    imageCache.setObject(image, forKey: NSString.init(string: urlString))
-                    DispatchQueue.main.async {
-                        self.image = image
-                        completion?(true)
+            group.enter()
+            DispatchQueue.global(qos: .background).async {
+                if let imageData = try? Data.init(contentsOf: url) {
+                    if let image = UIImage(data: imageData) {
+                        imageCache.setObject(image, forKey: NSString.init(string: urlString))
+                        DispatchQueue.main.async {
+                            self.image = image
+                            group.leave()
+                        }
                     }
                 }
-            } else {
-                completion?(false)
             }
+            group.notify(queue: .main, execute: {
+                completion?(true)
+            })
         }
     }
 }

@@ -29,6 +29,18 @@ extension PhotoGridListDelegateSource: UICollectionViewDelegate, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 100, height: 100)
+        let width = collectionView.frame.width / 4
+        return CGSize(width: width - 2, height: width)
+    }
+    
+}
+
+
+extension PhotoGridListDelegateSource {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let bottomEdge = scrollView.contentOffset.y + scrollView.frame.size.height
+        if bottomEdge >= scrollView.contentSize.height {
+            NotificationCenter.default.post(name: .fetchPhotos, object: nil)
+        }
     }
 }

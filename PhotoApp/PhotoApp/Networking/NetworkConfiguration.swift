@@ -32,7 +32,7 @@ extension NetworkEndPoint {
 enum NetworkConfiguration: NetworkEndPoint {
     case curatedPhotos(page: Int, sortedBy: SortedPhoto)
     
-    static var photosPerPage = 30
+    static var photosPerPage = 28
     
     var baseUrl: String {
         return "https://api.unsplash.com"

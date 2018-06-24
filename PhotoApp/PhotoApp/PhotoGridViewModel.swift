@@ -39,6 +39,9 @@ class PhotoGridViewModel: PhotoGridViewModelProtocol {
                     self.fetchingPhotos?()
                 case .didFinishFetching(let photos):
                     self.didFinishFetch?(photos)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                       self.photos = []
+                    })
                 case .fetchingError(let error):
                     self.fetchingError?(error)
                 }
@@ -53,22 +56,18 @@ class PhotoGridViewModel: PhotoGridViewModelProtocol {
     }
     
 }
-
 extension PhotoGridViewModel {
     func fetchPhotos(forPage page: Int) {
         state = .fetching
         let photoApiService = networkService as! PhotoApiNetworkService
         let configuration = NetworkConfiguration.curatedPhotos(page: page, sortedBy: photosSortType)
         downloadGroup.enter()
+        print(configuration.request.url!)
         photoApiService.fetchPhotos(with: configuration) { [weak self] (result) in
             guard let `self` = self else { return }
             switch result {
             case .success(let retrievedPhotos):
-                retrievedPhotos.forEach {
-                    if !self.photos.contains($0) {
-                        self.photos.append($0)
-                    }
-                }
+                self.photos = retrievedPhotos
                 self.downloadGroup.leave()
             case .failure(let error):
                 DispatchQueue.main.async {
