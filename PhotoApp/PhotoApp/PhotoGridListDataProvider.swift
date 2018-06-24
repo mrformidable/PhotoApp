@@ -24,7 +24,8 @@ extension PhotoGridListDataProvider: UICollectionViewDataSource {
         switch Section.init(rawValue: indexPath.section)! {
         case .allPhotos:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! PhotoGridCollectionCell
-            cell.imageView.backgroundColor = .gray
+            let photo = photos[indexPath.item]
+            cell.imageView.loadImageCache(with: photo.imageUrls?.thumb.absoluteString ?? "", completion: nil)
             return cell
         }
     }
@@ -35,5 +36,7 @@ extension PhotoGridListDataProvider {
         case allPhotos = 0
     }
 }
+
+
 
 

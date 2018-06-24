@@ -30,6 +30,7 @@
 		44EC2F6620D8C107009C7DAA /* PhotoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC2F6520D8C107009C7DAA /* PhotoAppUITests.swift */; };
 		44EC2F7420D97232009C7DAA /* PhotoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC2F7320D97232009C7DAA /* PhotoTests.swift */; };
 		44EC2F7620D973BB009C7DAA /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC2F7520D973BB009C7DAA /* Photo.swift */; };
+		44F752AF20DF2C2A00830059 /* ImageCacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F752AE20DF2C2A00830059 /* ImageCacher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		44EC2F6720D8C107009C7DAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44EC2F7320D97232009C7DAA /* PhotoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTests.swift; sourceTree = "<group>"; };
 		44EC2F7520D973BB009C7DAA /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		44F752AE20DF2C2A00830059 /* ImageCacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 				4417AA4C20DCABA0009EC878 /* PhotoGridCollectionCell.swift */,
 				4417AA4420DC9E6B009EC878 /* PhotoGridListDataProvider.swift */,
 				4417AA4A20DCA3EE009EC878 /* PhotoGridListDelegateSource.swift */,
+				44F752AE20DF2C2A00830059 /* ImageCacher.swift */,
 				4417AA3E20DC568E009EC878 /* Networking */,
 				44EC2F4920D8C107009C7DAA /* Main.storyboard */,
 				44EC2F4C20D8C107009C7DAA /* Assets.xcassets */,
@@ -329,6 +332,7 @@
 				4444775520D9AF5000D52304 /* Result.swift in Sources */,
 				4444775920D9C47F00D52304 /* PhotoApiNetworkService.swift in Sources */,
 				4444775120D9AAD300D52304 /* NetworkService.swift in Sources */,
+				44F752AF20DF2C2A00830059 /* ImageCacher.swift in Sources */,
 				44EC2F4620D8C107009C7DAA /* AppDelegate.swift in Sources */,
 				4417AA4920DC9F77009EC878 /* PhotoGridListViewController.swift in Sources */,
 				4417AA4D20DCABA0009EC878 /* PhotoGridCollectionCell.swift in Sources */,
