@@ -25,7 +25,8 @@ extension PhotoGridListDataProvider: UICollectionViewDataSource {
         case .allPhotos:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! PhotoGridCollectionCell
             let photo = photos[indexPath.item]
-            cell.imageView.loadImageCache(with: photo.imageUrls?.thumb.absoluteString ?? "", completion: nil)
+            let photoViewModel = PhotoGridCellViewModel(photo)
+            cell.displayPhoto(with: photoViewModel)
             return cell
         }
     }
