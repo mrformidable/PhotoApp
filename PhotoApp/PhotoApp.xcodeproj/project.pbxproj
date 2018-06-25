@@ -9,30 +9,30 @@
 /* Begin PBXBuildFile section */
 		4417AA3A20DC4AFA009EC878 /* NetworkConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4417AA3920DC4AFA009EC878 /* NetworkConfiguration.swift */; };
 		4417AA3C20DC4B69009EC878 /* NetworkConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4417AA3B20DC4B69009EC878 /* NetworkConfigurationTests.swift */; };
-		4417AA4120DC570F009EC878 /* PhotoGridViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4417AA4020DC570F009EC878 /* PhotoGridViewModelTests.swift */; };
 		4417AA4320DC5731009EC878 /* PhotoGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4417AA4220DC5731009EC878 /* PhotoGridViewModel.swift */; };
 		4417AA4520DC9E6B009EC878 /* PhotoGridListDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4417AA4420DC9E6B009EC878 /* PhotoGridListDataProvider.swift */; };
-		4417AA4720DC9F3C009EC878 /* PhotoGridListDataProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4417AA4620DC9F3C009EC878 /* PhotoGridListDataProviderTests.swift */; };
 		4417AA4920DC9F77009EC878 /* PhotoGridListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4417AA4820DC9F77009EC878 /* PhotoGridListViewController.swift */; };
 		4417AA4B20DCA3EE009EC878 /* PhotoGridListDelegateSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4417AA4A20DCA3EE009EC878 /* PhotoGridListDelegateSource.swift */; };
 		4417AA4D20DCABA0009EC878 /* PhotoGridCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4417AA4C20DCABA0009EC878 /* PhotoGridCollectionCell.swift */; };
 		441D49A020DAC7EE002A40AC /* ResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441D499F20DAC7EE002A40AC /* ResultTests.swift */; };
 		441F48F220E033DA0015551D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441F48F120E033DA0015551D /* Extensions.swift */; };
 		441F48FF20E04A7C0015551D /* PhotoGridCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441F48FE20E04A7C0015551D /* PhotoGridCellViewModel.swift */; };
-		441F490120E04CB30015551D /* PhotoGridCellViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441F490020E04CB30015551D /* PhotoGridCellViewModelTests.swift */; };
+		442FD1F920E06DBB007761D5 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442FD1F820E06DBB007761D5 /* Photo.swift */; };
+		442FD1FC20E06E4B007761D5 /* PhotoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442FD1FB20E06E4B007761D5 /* PhotoTests.swift */; };
+		442FD1FE20E06EB8007761D5 /* PhotoGridListDataProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442FD1FD20E06EB8007761D5 /* PhotoGridListDataProviderTests.swift */; };
+		442FD20020E06F0F007761D5 /* PhotoGridListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442FD1FF20E06F0F007761D5 /* PhotoGridListViewControllerTests.swift */; };
+		442FD20220E06F3A007761D5 /* PhotoGridViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442FD20120E06F39007761D5 /* PhotoGridViewModelTests.swift */; };
+		442FD20420E06FB2007761D5 /* PhotoGridCellViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442FD20320E06FB2007761D5 /* PhotoGridCellViewModelTests.swift */; };
 		4444775120D9AAD300D52304 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4444775020D9AAD300D52304 /* NetworkService.swift */; };
 		4444775320D9ABB400D52304 /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4444775220D9ABB400D52304 /* NetworkTests.swift */; };
 		4444775520D9AF5000D52304 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4444775420D9AF5000D52304 /* Result.swift */; };
 		4444775920D9C47F00D52304 /* PhotoApiNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4444775820D9C47F00D52304 /* PhotoApiNetworkService.swift */; };
 		4444775D20D9CACE00D52304 /* PhotoApiServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4444775C20D9CACE00D52304 /* PhotoApiServiceTests.swift */; };
-		44E92AD920DEC267000D8094 /* PhotoGridListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E92AD820DEC267000D8094 /* PhotoGridListViewControllerTests.swift */; };
 		44EC2F4620D8C107009C7DAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC2F4520D8C107009C7DAA /* AppDelegate.swift */; };
 		44EC2F4B20D8C107009C7DAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44EC2F4920D8C107009C7DAA /* Main.storyboard */; };
 		44EC2F4D20D8C107009C7DAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44EC2F4C20D8C107009C7DAA /* Assets.xcassets */; };
 		44EC2F5020D8C107009C7DAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44EC2F4E20D8C107009C7DAA /* LaunchScreen.storyboard */; };
 		44EC2F6620D8C107009C7DAA /* PhotoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC2F6520D8C107009C7DAA /* PhotoAppUITests.swift */; };
-		44EC2F7420D97232009C7DAA /* PhotoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC2F7320D97232009C7DAA /* PhotoTests.swift */; };
-		44EC2F7620D973BB009C7DAA /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC2F7520D973BB009C7DAA /* Photo.swift */; };
 		44F752AF20DF2C2A00830059 /* ImageCacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F752AE20DF2C2A00830059 /* ImageCacher.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,23 +56,25 @@
 /* Begin PBXFileReference section */
 		4417AA3920DC4AFA009EC878 /* NetworkConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfiguration.swift; sourceTree = "<group>"; };
 		4417AA3B20DC4B69009EC878 /* NetworkConfigurationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfigurationTests.swift; sourceTree = "<group>"; };
-		4417AA4020DC570F009EC878 /* PhotoGridViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridViewModelTests.swift; sourceTree = "<group>"; };
 		4417AA4220DC5731009EC878 /* PhotoGridViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridViewModel.swift; sourceTree = "<group>"; };
 		4417AA4420DC9E6B009EC878 /* PhotoGridListDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridListDataProvider.swift; sourceTree = "<group>"; };
-		4417AA4620DC9F3C009EC878 /* PhotoGridListDataProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridListDataProviderTests.swift; sourceTree = "<group>"; };
 		4417AA4820DC9F77009EC878 /* PhotoGridListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridListViewController.swift; sourceTree = "<group>"; };
 		4417AA4A20DCA3EE009EC878 /* PhotoGridListDelegateSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridListDelegateSource.swift; sourceTree = "<group>"; };
 		4417AA4C20DCABA0009EC878 /* PhotoGridCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridCollectionCell.swift; sourceTree = "<group>"; };
 		441D499F20DAC7EE002A40AC /* ResultTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTests.swift; sourceTree = "<group>"; };
 		441F48F120E033DA0015551D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		441F48FE20E04A7C0015551D /* PhotoGridCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridCellViewModel.swift; sourceTree = "<group>"; };
-		441F490020E04CB30015551D /* PhotoGridCellViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridCellViewModelTests.swift; sourceTree = "<group>"; };
+		442FD1F820E06DBB007761D5 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		442FD1FB20E06E4B007761D5 /* PhotoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhotoTests.swift; path = PhotoAppTests/PhotoTests.swift; sourceTree = SOURCE_ROOT; };
+		442FD1FD20E06EB8007761D5 /* PhotoGridListDataProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridListDataProviderTests.swift; sourceTree = "<group>"; };
+		442FD1FF20E06F0F007761D5 /* PhotoGridListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhotoGridListViewControllerTests.swift; path = ControllerTests/PhotoGridListViewControllerTests.swift; sourceTree = "<group>"; };
+		442FD20120E06F39007761D5 /* PhotoGridViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhotoGridViewModelTests.swift; path = PhotoAppTests/ViewModelTests/PhotoGridViewModelTests.swift; sourceTree = SOURCE_ROOT; };
+		442FD20320E06FB2007761D5 /* PhotoGridCellViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhotoGridCellViewModelTests.swift; path = PhotoAppTests/ViewModelTests/PhotoGridCellViewModelTests.swift; sourceTree = SOURCE_ROOT; };
 		4444775020D9AAD300D52304 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		4444775220D9ABB400D52304 /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
 		4444775420D9AF5000D52304 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		4444775820D9C47F00D52304 /* PhotoApiNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoApiNetworkService.swift; sourceTree = "<group>"; };
 		4444775C20D9CACE00D52304 /* PhotoApiServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoApiServiceTests.swift; sourceTree = "<group>"; };
-		44E92AD820DEC267000D8094 /* PhotoGridListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridListViewControllerTests.swift; sourceTree = "<group>"; };
 		44EC2F4220D8C107009C7DAA /* PhotoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44EC2F4520D8C107009C7DAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44EC2F4A20D8C107009C7DAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -84,8 +86,6 @@
 		44EC2F6120D8C107009C7DAA /* PhotoAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		44EC2F6520D8C107009C7DAA /* PhotoAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAppUITests.swift; sourceTree = "<group>"; };
 		44EC2F6720D8C107009C7DAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		44EC2F7320D97232009C7DAA /* PhotoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTests.swift; sourceTree = "<group>"; };
-		44EC2F7520D973BB009C7DAA /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		44F752AE20DF2C2A00830059 /* ImageCacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,30 +136,11 @@
 			path = NetworkingTests;
 			sourceTree = "<group>";
 		};
-		441F48F720E049880015551D /* ModelTests */ = {
-			isa = PBXGroup;
-			children = (
-				44EC2F7320D97232009C7DAA /* PhotoTests.swift */,
-			);
-			name = ModelTests;
-			path = "New Group";
-			sourceTree = "<group>";
-		};
-		441F48F820E049B00015551D /* ControllerTests */ = {
-			isa = PBXGroup;
-			children = (
-				4417AA4620DC9F3C009EC878 /* PhotoGridListDataProviderTests.swift */,
-				44E92AD820DEC267000D8094 /* PhotoGridListViewControllerTests.swift */,
-			);
-			name = ControllerTests;
-			path = "New Group1";
-			sourceTree = "<group>";
-		};
 		441F48F920E049C00015551D /* ViewModelTests */ = {
 			isa = PBXGroup;
 			children = (
-				4417AA4020DC570F009EC878 /* PhotoGridViewModelTests.swift */,
-				441F490020E04CB30015551D /* PhotoGridCellViewModelTests.swift */,
+				442FD20120E06F39007761D5 /* PhotoGridViewModelTests.swift */,
+				442FD20320E06FB2007761D5 /* PhotoGridCellViewModelTests.swift */,
 			);
 			name = ViewModelTests;
 			path = "New Group2";
@@ -173,15 +154,6 @@
 				4417AA4A20DCA3EE009EC878 /* PhotoGridListDelegateSource.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		441F48FB20E049E30015551D /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				44EC2F7520D973BB009C7DAA /* Photo.swift */,
-			);
-			name = Model;
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 		441F48FC20E049EC0015551D /* ViewModel */ = {
@@ -199,6 +171,15 @@
 				4417AA4C20DCABA0009EC878 /* PhotoGridCollectionCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		442FD1FA20E06DC6007761D5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				442FD1F820E06DBB007761D5 /* Photo.swift */,
+			);
+			name = Model;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		44EC2F3920D8C107009C7DAA = {
@@ -224,7 +205,7 @@
 		44EC2F4420D8C107009C7DAA /* PhotoApp */ = {
 			isa = PBXGroup;
 			children = (
-				441F48FB20E049E30015551D /* Model */,
+				442FD1FA20E06DC6007761D5 /* Model */,
 				441F48FC20E049EC0015551D /* ViewModel */,
 				441F48FD20E049F30015551D /* Views */,
 				441F48FA20E049D70015551D /* Controller */,
@@ -244,9 +225,10 @@
 			isa = PBXGroup;
 			children = (
 				44EC2F5C20D8C107009C7DAA /* Info.plist */,
-				441F48F720E049880015551D /* ModelTests */,
+				442FD1FB20E06E4B007761D5 /* PhotoTests.swift */,
+				442FD1FD20E06EB8007761D5 /* PhotoGridListDataProviderTests.swift */,
+				442FD1FF20E06F0F007761D5 /* PhotoGridListViewControllerTests.swift */,
 				441F48F920E049C00015551D /* ViewModelTests */,
-				441F48F820E049B00015551D /* ControllerTests */,
 				4417AA3F20DC569C009EC878 /* NetworkingTests */,
 			);
 			path = PhotoAppTests;
@@ -396,8 +378,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				442FD1F920E06DBB007761D5 /* Photo.swift in Sources */,
 				4417AA4520DC9E6B009EC878 /* PhotoGridListDataProvider.swift in Sources */,
-				44EC2F7620D973BB009C7DAA /* Photo.swift in Sources */,
 				4444775520D9AF5000D52304 /* Result.swift in Sources */,
 				4444775920D9C47F00D52304 /* PhotoApiNetworkService.swift in Sources */,
 				4444775120D9AAD300D52304 /* NetworkService.swift in Sources */,
@@ -417,15 +399,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				441F490120E04CB30015551D /* PhotoGridCellViewModelTests.swift in Sources */,
+				442FD20420E06FB2007761D5 /* PhotoGridCellViewModelTests.swift in Sources */,
 				4444775D20D9CACE00D52304 /* PhotoApiServiceTests.swift in Sources */,
-				4417AA4720DC9F3C009EC878 /* PhotoGridListDataProviderTests.swift in Sources */,
-				4417AA4120DC570F009EC878 /* PhotoGridViewModelTests.swift in Sources */,
+				442FD20020E06F0F007761D5 /* PhotoGridListViewControllerTests.swift in Sources */,
+				442FD1FE20E06EB8007761D5 /* PhotoGridListDataProviderTests.swift in Sources */,
 				4444775320D9ABB400D52304 /* NetworkTests.swift in Sources */,
 				441D49A020DAC7EE002A40AC /* ResultTests.swift in Sources */,
-				44EC2F7420D97232009C7DAA /* PhotoTests.swift in Sources */,
+				442FD1FC20E06E4B007761D5 /* PhotoTests.swift in Sources */,
+				442FD20220E06F3A007761D5 /* PhotoGridViewModelTests.swift in Sources */,
 				4417AA3C20DC4B69009EC878 /* NetworkConfigurationTests.swift in Sources */,
-				44E92AD920DEC267000D8094 /* PhotoGridListViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
