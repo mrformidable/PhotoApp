@@ -30,6 +30,7 @@ extension PhotoGridListDataProvider: UICollectionViewDataSource {
             return cell
         }
     }
+    
 }
 
 extension PhotoGridListDataProvider {

@@ -7,16 +7,17 @@
 //
 
 import UIKit
-
+import SDWebImage
 class DetailPhotoCollectionCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
     
     func displayPhoto(with viewModel: DetailPhotoCellViewModel) {
-        imageView.loadImageCache(with: viewModel.imageUrls?.regular.absoluteString ?? "", completion: nil)
+        imageView.sd_addActivityIndicator()
+        imageView.sd_setIndicatorStyle(.whiteLarge)
+        imageView.sd_setImage(with: viewModel.imageUrls?.regular, placeholderImage: #imageLiteral(resourceName: "photo_placeholder"), options: SDWebImageOptions()) { (_, _, _, _) in
+            self.imageView.sd_removeActivityIndicator()
+        }
     }
     
-    override func prepareForReuse() {
-        imageView.layoutIfNeeded()
-    }
 }

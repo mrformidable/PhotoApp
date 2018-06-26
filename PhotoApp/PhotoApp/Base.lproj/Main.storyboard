@@ -18,7 +18,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="E5o-e0-0Gi">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="um0-yP-wKx" userLabel="LoadingIndicatorView">
+                                <rect key="frame" x="0.0" y="307" width="375" height="117"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading Photos...." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n6H-0M-UIe">
+                                        <rect key="frame" x="8" y="14" width="359" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="7ax-dk-qWn">
+                                        <rect key="frame" x="169" y="39" width="37" height="37"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="37" id="6rB-uB-s8v"/>
+                                            <constraint firstAttribute="width" constant="37" id="9ar-ml-cwk"/>
+                                        </constraints>
+                                        <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="n6H-0M-UIe" firstAttribute="top" secondItem="um0-yP-wKx" secondAttribute="top" constant="14" id="C2I-po-GcD"/>
+                                    <constraint firstAttribute="height" constant="117" id="Ifh-LU-Ljy"/>
+                                    <constraint firstItem="7ax-dk-qWn" firstAttribute="centerX" secondItem="um0-yP-wKx" secondAttribute="centerX" id="dAC-NQ-cnY"/>
+                                    <constraint firstItem="7ax-dk-qWn" firstAttribute="top" secondItem="n6H-0M-UIe" secondAttribute="bottom" constant="1" id="dkV-Oi-K0z"/>
+                                    <constraint firstItem="n6H-0M-UIe" firstAttribute="leading" secondItem="um0-yP-wKx" secondAttribute="leading" constant="8" id="fsT-M1-ISn"/>
+                                    <constraint firstAttribute="trailing" secondItem="n6H-0M-UIe" secondAttribute="trailing" constant="8" id="sm4-B4-G7o"/>
+                                </constraints>
+                            </view>
+                            <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="E5o-e0-0Gi">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vyG-4m-xqJ">
@@ -56,15 +84,21 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="E5o-e0-0Gi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="8pG-Ib-W7n"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="um0-yP-wKx" secondAttribute="trailing" id="DeX-hv-4G9"/>
                             <constraint firstItem="E5o-e0-0Gi" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="I1i-ba-T8s"/>
+                            <constraint firstItem="um0-yP-wKx" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Ya4-Qy-tke"/>
                             <constraint firstItem="E5o-e0-0Gi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fV6-Ey-B9E"/>
+                            <constraint firstItem="um0-yP-wKx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hly-ml-u9R"/>
+                            <constraint firstItem="um0-yP-wKx" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="jm2-QC-6cJ"/>
                             <constraint firstItem="E5o-e0-0Gi" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="z8e-pl-tab"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Photos" id="oFT-NS-hdA"/>
                     <connections>
+                        <outlet property="activityIndicatorView" destination="7ax-dk-qWn" id="QIa-TA-Cfj"/>
                         <outlet property="collectionView" destination="E5o-e0-0Gi" id="EK8-vb-OXG"/>
+                        <outlet property="loadingIndicatorView" destination="um0-yP-wKx" id="ZuO-EB-y5E"/>
                         <segue destination="mTS-eI-Bk6" kind="show" identifier="DetailControllerSeague" id="Eub-2J-5BA"/>
                     </connections>
                 </viewController>

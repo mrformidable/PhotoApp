@@ -15,6 +15,8 @@ import UIKit
 class PhotoGridListViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var loadingIndicatorView: UIView!
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     private let datasource = PhotoGridListDataProvider()
     private let delegateSource = PhotoGridListDelegateSource()
     private let viewModel = PhotoGridViewModel()
@@ -30,10 +32,17 @@ class PhotoGridListViewController: UIViewController {
         viewModel.didFinishFetch = { [weak self] photos in
             guard let `self` = self else { return }
             photos.forEach { if !self.datasource.photos.contains($0) { self.datasource.photos.append($0) } }
+            self.activityIndicatorView.stopAnimating()
+            self.collectionView.isHidden = false
+            self.loadingIndicatorView.isHidden = true
             self.collectionViewReloading()
         }
         
-        viewModel.fetchingPhotos = { print("fetching photos...") }
+        viewModel.fetchingPhotos = { [weak self] in
+            guard let `self` = self else { return }
+            self.activityIndicatorView.startAnimating()
+            self.loadingIndicatorView.isHidden = false
+        }
         addObservers()
     }
     
