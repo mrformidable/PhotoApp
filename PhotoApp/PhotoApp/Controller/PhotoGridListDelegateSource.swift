@@ -13,7 +13,7 @@ class PhotoGridListDelegateSource: NSObject {}
 
 extension PhotoGridListDelegateSource: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("selected row: \(indexPath.row)")
+        NotificationCenter.default.post(name: .showDetailController, object: indexPath)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

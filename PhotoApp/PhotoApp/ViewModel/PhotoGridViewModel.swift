@@ -62,7 +62,6 @@ extension PhotoGridViewModel {
         let photoApiService = networkService as! PhotoApiNetworkService
         let configuration = NetworkConfiguration.curatedPhotos(page: page, sortedBy: photosSortType)
         downloadGroup.enter()
-        print(configuration.request.url!)
         photoApiService.fetchPhotos(with: configuration) { [weak self] (result) in
             guard let `self` = self else { return }
             switch result {

@@ -13,4 +13,12 @@ extension Notification.Name {
     static var fetchPhotos: Notification.Name {
         return .init("FetchPhotos")
     }
+    
+    static var showDetailController: Notification.Name {
+        return .init("DetailPhotoController")
+    }
+    
+    static var selectedIndexPathFromDetailController: Notification.Name {
+        return .init("SelectedIndexPathFromDetailController")
+    }
 }

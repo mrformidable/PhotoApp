@@ -9,16 +9,19 @@
 import Foundation
 import UIKit
 
+import Foundation
+import UIKit
+
 class PhotoGridListViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    
     private let datasource = PhotoGridListDataProvider()
     private let delegateSource = PhotoGridListDelegateSource()
     private let viewModel = PhotoGridViewModel()
     private var page = 1
     private let photosPerPage = NetworkConfiguration.photosPerPage
-
+    private var selectedPhotoIndexPath: IndexPath?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
@@ -34,6 +37,14 @@ class PhotoGridListViewController: UIViewController {
         addObservers()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let selectedPhotoIndexPath = selectedPhotoIndexPath {
+            collectionView.layoutIfNeeded()
+            collectionView.scrollToItem(at: selectedPhotoIndexPath, at: UICollectionViewScrollPosition(), animated: false)
+        }
+    }
+    
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
@@ -43,8 +54,20 @@ class PhotoGridListViewController: UIViewController {
         viewModel.fetchPhotos(forPage: page)
     }
     
+    @objc private func showDetailPhotoController(_ notification: Notification) {
+        let indexPath = notification.object as? IndexPath
+        performSegue(withIdentifier: Constants.SegueIdentifiers.detailPhotoSegueIdentifier, sender: indexPath)
+    }
+    
+    @objc private func updatedPhotoIndexPath(_ notification: Notification) {
+        let indexPath = notification.object as? IndexPath
+        selectedPhotoIndexPath = indexPath
+    }
+    
     private func addObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(loadMorePhotos), name: .fetchPhotos, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(showDetailPhotoController(_:)), name: .showDetailController, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updatedPhotoIndexPath(_:)), name: .selectedIndexPathFromDetailController, object: nil)
     }
     
     private func setupCollectionView() {
@@ -52,8 +75,28 @@ class PhotoGridListViewController: UIViewController {
         collectionView.delegate = delegateSource
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        collectionView.collectionViewLayout.invalidateLayout()
+    }
+    
 }
 
+//MARK:- Prepare for segue
+extension PhotoGridListViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Constants.SegueIdentifiers.detailPhotoSegueIdentifier {
+            if let detailPhotoViewController = segue.destination as? DetailPhotoViewController {
+                detailPhotoViewController.dataSource.photos =  datasource.photos
+                if let indexPath = sender as? IndexPath {
+                    detailPhotoViewController.selectedIndexPath = indexPath
+                }
+            }
+        }
+    }
+}
+
+//MARK:- CollectionView Reloading
 extension PhotoGridListViewController {
     private func collectionViewReloading() {
         let lastIndex = datasource.photos.count - 1
