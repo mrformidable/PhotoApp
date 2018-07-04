@@ -6,6 +6,11 @@ This app fetches photos from the [Unsplash Api](https://unsplash.com/developers)
 The API key is in Networking/NetworkConfiguration.swift. Copy and replace your key there.
 ````
 
+## Preview
+
+<img src="photo.png?raw=true" width="340px">
+
+
 ## Installation
 ### [CocoaPods](https://cocoapods.org/) **Recommended**
 ````ruby
@@ -61,6 +66,5 @@ private let viewModel = PhotoGridViewModel()
             self.loadingIndicatorView.isHidden = false
       }
 ````
-
 
 
