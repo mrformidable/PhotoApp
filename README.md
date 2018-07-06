@@ -59,7 +59,7 @@ When the value changes, simply call the closure or any func in the enum cases.
 private let viewModel = PhotoGridViewModel()
 
 // Then in viewDidLoad call any of the closures you implemented
-// Make sure a weak reference to cell is made, to avoid any retain cycle.
+// Make sure a weak reference to self is made, to avoid any retain cycle.
  viewModel.fetchingPhotos = { [weak self] in
             guard let `self` = self else { return }
             self.activityIndicatorView.startAnimating()
